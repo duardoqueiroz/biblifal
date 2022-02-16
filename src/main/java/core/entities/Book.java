@@ -3,16 +3,18 @@ package core.entities;
 public class Book {
   private String title;
   private String company;
+  private String[] genre = new String[3];
   private String author;
   private float price;
   private Shelf shelf;
 
-  public Book(String title, String company, String author, float price, Shelf shelf) {
+  public Book(String title, String company, String author, float price, Shelf shelf, String[] genre) {
     this.title = title;
     this.company = company;
     this.author = author;
     this.price = price;
     this.shelf = shelf;
+    this.genre = genre;
   }
 
   public String getTitle() {
