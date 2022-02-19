@@ -1,14 +1,25 @@
 package core.entities;
 
 public class User {
-  private String name;
+  private int id;
+  private String name, password;
   private Boolean isManager = false;
-  private Email email;
+  private String email;
 
-  public User(String name, Boolean isManager, Email email) {
+  public User(String name, String email, String password) {
+    if ((email.isEmpty() || email.contains(" ")) || (name.isEmpty())
+        || (password.isEmpty() || password.contains(" "))) {
+      return;
+    }
+
+    if (!email
+        .matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$")) {
+      return;
+    }
+
     this.name = name;
-    this.isManager = isManager;
     this.email = email;
+    this.password = password;
   }
 
   @Override
@@ -20,10 +31,6 @@ public class User {
     return name;
   }
 
-  public void setName(String name) {
-    this.name = name;
-  }
-
   public Boolean getIsManager() {
     return isManager;
   }
@@ -32,11 +39,20 @@ public class User {
     this.isManager = isManager;
   }
 
-  public Email getEmail() {
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public String getEmail() {
     return email;
   }
 
-  public void setEmail(Email email) {
-    this.email = email;
+  public String getPassword() {
+    return password;
   }
+
+  public int getId() {
+    return id;
+  }
+
 }

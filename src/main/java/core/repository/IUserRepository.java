@@ -8,4 +8,6 @@ public interface IUserRepository {
   void save(User user);
 
   ArrayList<User> findAll();
+
+  User find(String email);
 }

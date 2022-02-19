@@ -3,16 +3,19 @@ package database;
 import java.sql.*;
 
 public class Postgres {
-  public static Connection getConnection(String username, String password, String dbname, String host, String port) {
+  public static Connection getConnection() {
     String driver = "org.postgresql.Driver";
-    String url = "jdbc:postgresql://" + host + ":" + port + "/" + dbname;
+    Credentials credentials = Credentials.getInstance();
+    String url = "jdbc:postgresql://" + credentials.getHost() + ":" + credentials.getPort() + "/"
+        + credentials.getDbname();
 
     try {
       Class.forName(driver);
-      return DriverManager.getConnection(url, username, password);
+      return DriverManager.getConnection(url, credentials.getUsername(), credentials.getPassword());
     } catch (ClassNotFoundException | SQLException e) {
       e.printStackTrace();
     }
     throw new IllegalArgumentException("Erro ao conectar com banco de dados!");
   }
+
 }
