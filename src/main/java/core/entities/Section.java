@@ -3,10 +3,12 @@ package core.entities;
 public class Section {
   private String name;
   private String description;
+  private int id;
 
-  public Section(String name, String description) {
+  public Section(String name, String description, int id) {
     this.name = name;
     this.description = description;
+    this.id = id;
   }
 
   public String getName() {
@@ -27,6 +29,14 @@ public class Section {
 
   @Override
   public String toString() {
-    return "Section [description=" + description + ", name=" + name + "]";
+    return "Section [description=" + description + ", id=" + id + ", name=" + name + "]";
+  }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
   }
 }
