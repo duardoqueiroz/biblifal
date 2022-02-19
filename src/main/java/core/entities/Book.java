@@ -1,5 +1,7 @@
 package core.entities;
 
+//comentario teste;
+
 public class Book {
   private String title;
   private String company;
