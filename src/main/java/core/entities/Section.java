@@ -1,6 +1,7 @@
 package core.entities;
 
 public class Section {
+  private int id;
   private String name;
   private String description;
 
@@ -25,8 +26,12 @@ public class Section {
     this.description = description;
   }
 
+  public int getId(){
+    return id;
+  }
+
   @Override
   public String toString() {
-    return "Section [description=" + description + ", name=" + name + "]";
+    return "Section [Id="+ id + ", description=" + description + ", name=" + name + "]";
   }
 }
