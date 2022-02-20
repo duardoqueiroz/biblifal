@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import core.entities.Shelf;
 
-public interface IShelfRepositoy {
+public interface IShelfRepository {
   void save(Shelf shelf);
 
   void remove(int shelfId);

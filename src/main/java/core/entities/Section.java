@@ -4,11 +4,12 @@ public class Section {
   private int id;
   private String name;
   private String description;
+  private int id;
 
-  public Section(int id, String name, String description) {
-    this.id = id;
+  public Section(String name, String description, int id) {
     this.name = name;
     this.description = description;
+    this.id = id;
   }
 
   public String getName() {
@@ -35,4 +36,13 @@ public class Section {
   public String toString() {
     return "Section [Id="+ id + ", description=" + description + ", name=" + name + "]";
   }
+
+  public int getId() {
+    return id;
+  }
+
+  public void setId(int id) {
+    this.id = id;
+  }
+  
 }

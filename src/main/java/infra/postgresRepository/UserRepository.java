@@ -25,7 +25,6 @@ public class UserRepository implements IUserRepository {
 
       pst.close();
       conn.close();
-
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -51,6 +50,9 @@ public class UserRepository implements IUserRepository {
         user.setId(id);
         users.add(user);
       }
+
+      pst.close();
+      conn.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -76,6 +78,8 @@ public class UserRepository implements IUserRepository {
         user.setIsManager(isManager);
         user.setId(id);
       }
+      pst.close();
+      conn.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
