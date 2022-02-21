@@ -63,8 +63,8 @@ public class SectionRepository implements ISectionRepository {
                 section = new Section(id, name, description);
             }
 
-            pst.close();
             conn.close();
+            pst.close();
             rst.close();
         } catch (Exception e) {
             e.printStackTrace();
@@ -87,6 +87,10 @@ public class SectionRepository implements ISectionRepository {
                 Section section = new Section(id, name, description);
                 sections.add(section);
             }
+
+            conn.close();
+            pst.close();
+            rst.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
