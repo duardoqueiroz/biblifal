@@ -62,6 +62,10 @@ public class SectionRepository implements ISectionRepository {
                 String description = rst.getString("description");
                 section = new Section(id, name, description);
             }
+
+            pst.close();
+            conn.close();
+            rst.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
