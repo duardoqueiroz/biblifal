@@ -13,10 +13,6 @@ public class SectionsService {
     }
 
     public void save(Section section) {
-        Section alreadyExists = this.sectionRepository.find(section.getId());
-        if(alreadyExists != null) {
-            return;
-        }
         sectionRepository.save(section);
     }
 
