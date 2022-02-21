@@ -233,8 +233,17 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
     private void sendButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sendButtonMouseClicked
         // TODO add your handling code here:
+        
+        //getting password to string
         String strPass = new String(password.getPassword()).trim();
         String strConfimPass = new String(confirmPassword.getPassword()).trim();
+        
+        //check if all fields are filled
+        if ("".equals(name.getText()) || "".equals(email.getText()) || "".equals(strPass) || "".equals(strConfimPass)) {
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
+        }
+        
+        //check if the passwords are the same
         if (!strPass.equalsIgnoreCase(strConfimPass)) {
             JOptionPane.showMessageDialog(null, "As senhas não coincidem");
         }
