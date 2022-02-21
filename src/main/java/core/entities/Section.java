@@ -4,9 +4,8 @@ public class Section {
   private int id;
   private String name;
   private String description;
-  private int id;
 
-  public Section(String name, String description, int id) {
+  public Section(int id, String name, String description) {
     this.name = name;
     this.description = description;
     this.id = id;
@@ -26,10 +25,6 @@ public class Section {
 
   public void setDescription(String description) {
     this.description = description;
-  }
-
-  public int getId(){
-    return id;
   }
 
   @Override
