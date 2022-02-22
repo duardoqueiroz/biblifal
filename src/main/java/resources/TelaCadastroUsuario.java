@@ -5,6 +5,8 @@
  */
 package resources;
 
+import core.entities.User;
+import infra.controllers.UsersController;
 import javax.swing.JOptionPane;
 
 /**
@@ -282,7 +284,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addContainerGap(236, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -300,7 +302,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(522, 522, 522)
+                        .addGap(519, 519, 519)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -344,12 +346,14 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         String strPass = new String(password.getPassword()).trim();
         String strConfirmPass = new String(confirmPassword.getPassword()).trim();
         
-        if ("".equalsIgnoreCase(name.getText()) || "".equalsIgnoreCase(email.getText()) || "".equalsIgnoreCase(strPass) || "".equalsIgnoreCase(strConfirmPass)) {
-            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
-        }
-        
         if (!strPass.equalsIgnoreCase(strConfirmPass)) {
             JOptionPane.showMessageDialog(null, "As senhas não coincidem");
+        }else if ("".equalsIgnoreCase(name.getText()) || "".equalsIgnoreCase(email.getText()) || "".equalsIgnoreCase(strPass) || "".equalsIgnoreCase(strConfirmPass)) {
+            JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
+        }else {
+            UsersController us = new UsersController();
+            us.save(new User(name.getText(), email.getText(), strPass));
+            JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
         }
     }//GEN-LAST:event_jButton1MouseClicked
 

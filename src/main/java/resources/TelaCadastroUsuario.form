@@ -52,9 +52,6 @@
     <Container class="javax.swing.JScrollPane" name="jScrollPane3">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value=""/>
-        <Property name="viewportView" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
-          <ComponentRef name="default"/>
-        </Property>
       </Properties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
@@ -71,7 +68,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jPanel1" alignment="0" pref="0" max="32767" attributes="0"/>
+                          <Component id="jPanel1" alignment="0" pref="250" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
                               <EmptySpace pref="236" max="32767" attributes="0"/>
                               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
@@ -95,7 +92,7 @@
                                   <Component id="jPanel1" max="32767" attributes="0"/>
                                   <Component id="jPanel6" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="522" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="519" max="-2" attributes="0"/>
                               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
