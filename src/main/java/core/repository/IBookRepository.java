@@ -10,6 +10,8 @@ public interface IBookRepository {
 
   void remove(int bookId);
 
+  Book find(int bookId);
+
   ArrayList<Book> findAll();
 
   void update(int bookId);
