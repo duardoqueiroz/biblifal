@@ -53,6 +53,7 @@ public class UserRepository implements IUserRepository {
 
       pst.close();
       conn.close();
+      rst.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -80,6 +81,7 @@ public class UserRepository implements IUserRepository {
       }
       pst.close();
       conn.close();
+      rst.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
