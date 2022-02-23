@@ -20,6 +20,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
      */
     public TelaCadastroUsuario() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -73,6 +74,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
 
         jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Downloads\\Voltar.png")); // NOI18N
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -364,6 +370,13 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     private void confirmPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmPasswordActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_confirmPasswordActionPerformed
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        TelaInicial t = new TelaInicial();
+        this.dispose();
+        t.setVisible(true);
+    }//GEN-LAST:event_jLabel11MouseClicked
 
     /**
      * @param args the command line arguments
