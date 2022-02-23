@@ -106,8 +106,7 @@ public class BookRepository implements IBookRepository {
     }
 
     @Override
-    public void update(int bookId) {
-        // TODO Auto-generated method stub
+    public void update(Book editBook, int bookId) {
         
     }
 

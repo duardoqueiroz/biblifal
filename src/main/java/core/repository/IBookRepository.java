@@ -14,5 +14,5 @@ public interface IBookRepository {
 
   ArrayList<Book> findAll();
 
-  void update(int bookId);
+  void update(Book editBook, int bookId);
 }
