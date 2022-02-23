@@ -107,6 +107,20 @@ public class BookRepository implements IBookRepository {
 
     @Override
     public void update(Book editBook, int bookId) {
+        try {
+            Connection conn = Postgres.getConnection();
+            String sql = "UPDATE books SET (title = ?, publishing_company = ?, author = ?, price = ?) WHERE id = ?;";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            //pst.setString();
+            pst.setString(1, editBook.getTitle());
+            pst.setString(2, editBook.getCompany());
+            pst.setString(3, editBook.getAuthor());
+            pst.setFloat(4, editBook.getPrice());
+            pst.setInt(5, bookId);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         
     }
 
