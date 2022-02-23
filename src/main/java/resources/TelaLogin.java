@@ -308,16 +308,10 @@ public class TelaLogin extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
-        String strPass = new String(password.getPassword()).trim();
-        String strConfirmPass = new String(confirmPassword.getPassword()).trim();
 
-        if (!strPass.equalsIgnoreCase(strConfirmPass)) {
-            JOptionPane.showMessageDialog(null, "As senhas não coincidem");
-        }else if ("".equalsIgnoreCase(email.getText()) || "".equalsIgnoreCase(senha.getText()) || "".equalsIgnoreCase(strPass) || "".equalsIgnoreCase(strConfirmPass)) {
+        if ("".equalsIgnoreCase(email.getText()) || "".equalsIgnoreCase(senha.getText())) {
             JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
         }else {
-            UsersController us = new UsersController();
-            us.save(new User(email.getText(), senha.getText(), strPass));
             JOptionPane.showMessageDialog(null, "Cadastro realizado com sucesso");
         }
     }//GEN-LAST:event_jButton1MouseClicked
