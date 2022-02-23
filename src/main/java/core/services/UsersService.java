@@ -33,8 +33,10 @@ public class UsersService {
 
   public User authenticate(String email, String password) {
     User user = this.userRepository.find(email);
-    if (Cryptography.encrypt(password).equals(user.getPassword())) {
-      return user;
+    if (user != null) {
+      if (Cryptography.encrypt(password).equals(user.getPassword())) {
+        return user;
+      }
     }
     return null;
   }
