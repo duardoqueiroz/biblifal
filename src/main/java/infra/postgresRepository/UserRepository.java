@@ -45,14 +45,14 @@ public class UserRepository implements IUserRepository {
         String email = rst.getString("email");
         String password = rst.getString("password");
         boolean isManager = rst.getBoolean("is_manager");
-        User user = new User(name, email, password);
+        User user = new User(id, name, email, password);
         user.setIsManager(isManager);
-        user.setId(id);
         users.add(user);
       }
 
       pst.close();
       conn.close();
+      rst.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -74,12 +74,12 @@ public class UserRepository implements IUserRepository {
         String name = rst.getString("name");
         String password = rst.getString("password");
         boolean isManager = rst.getBoolean("is_manager");
-        user = new User(name, email, password);
+        user = new User(id, name, email, password);
         user.setIsManager(isManager);
-        user.setId(id);
       }
       pst.close();
       conn.close();
+      rst.close();
     } catch (Exception e) {
       e.printStackTrace();
     }

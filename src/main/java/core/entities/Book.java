@@ -1,22 +1,20 @@
 package core.entities;
 
-//comentario teste;
+import java.util.Arrays;
 
 public class Book {
   private String title;
   private String company;
-  private String[] genre = new String[3];
+  private Genre[] genres = new Genre[3];
   private String author;
   private float price;
-  private Shelf shelf;
 
-  public Book(String title, String company, String author, float price, Shelf shelf, String[] genre) {
+  public Book(String title, String company, String author, float price, Genre[] genres) {
     this.title = title;
     this.company = company;
     this.author = author;
     this.price = price;
-    this.shelf = shelf;
-    this.genre = genre;
+    this.genres = genres;
   }
 
   public String getTitle() {
@@ -51,17 +49,17 @@ public class Book {
     this.price = price;
   }
 
-  public Shelf getShelf() {
-    return shelf;
-  }
-
-  public void setShelf(Shelf shelf) {
-    this.shelf = shelf;
-  }
-
   @Override
   public String toString() {
-    return "Book [author=" + author + ", company=" + company + ", price=" + price + ", shelf=" + shelf + ", title="
-        + title + "]";
+    return "Book [author=" + author + ", company=" + company + ", genres=" + Arrays.toString(genres) + ", price="
+        + price + ", title=" + title + "]";
+  }
+
+  public Genre[] getGenres() {
+    return genres;
+  }
+
+  public void setGenres(Genre[] genres) {
+    this.genres = genres;
   }
 }
