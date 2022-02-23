@@ -61,11 +61,12 @@ public class ShelfRepository implements IShelfRepository {
         int capacity = rst.getInt("capacity");
         String name = rst.getString("name");
         String description = rst.getString("description");
-        Shelf shelf = new Shelf(new Section(name, description, sectionId), capacity, id);
+        Shelf shelf = new Shelf(new Section(sectionId, name, description), capacity, id);
         shelfs.add(shelf);
       }
       pst.close();
       conn.close();
+      rst.close();
     } catch (Exception e) {
       e.printStackTrace();
     }
@@ -88,11 +89,12 @@ public class ShelfRepository implements IShelfRepository {
         int capacity = rst.getInt("capacity");
         String name = rst.getString("name");
         String description = rst.getString("description");
-        shelf = new Shelf(new Section(name, description, sectionId), capacity, id);
+        shelf = new Shelf(new Section(sectionId, name, description), capacity, id);
       }
 
       pst.close();
       conn.close();
+      rst.close();
     } catch (Exception e) {
       e.printStackTrace();
     }

@@ -1,11 +1,11 @@
 package core.entities;
 
 public class Section {
+  private int id;
   private String name;
   private String description;
-  private int id;
 
-  public Section(String name, String description, int id) {
+  public Section(int id, String name, String description) {
     this.name = name;
     this.description = description;
     this.id = id;
@@ -29,7 +29,7 @@ public class Section {
 
   @Override
   public String toString() {
-    return "Section [description=" + description + ", id=" + id + ", name=" + name + "]";
+    return "Section [Id="+ id + ", description=" + description + ", name=" + name + "]";
   }
 
   public int getId() {
@@ -39,4 +39,5 @@ public class Section {
   public void setId(int id) {
     this.id = id;
   }
+  
 }
