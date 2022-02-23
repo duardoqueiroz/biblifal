@@ -6,7 +6,7 @@ public class User {
   private Boolean isManager = false;
   private String email;
 
-  public User(String name, String email, String password) {
+  public User(int id, String name, String email, String password) {
     if ((email.isEmpty() || email.contains(" ")) || (name.isEmpty())
         || (password.isEmpty() || password.contains(" "))) {
       return;
@@ -16,7 +16,7 @@ public class User {
         .matches("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$")) {
       return;
     }
-
+    this.id = id;
     this.name = name;
     this.email = email;
     this.password = password;

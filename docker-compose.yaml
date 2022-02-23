@@ -1,0 +1,11 @@
+version: '2.0'
+services:
+  tdm_database:
+    image: postgres
+    container_name: tdm_database
+    environment:
+      POSTGRES_DB: ${PG_DB_NAME}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_USER: ${PG_USER}
+    ports:
+      - 5432:${PG_PORT}

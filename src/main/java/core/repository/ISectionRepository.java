@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import core.entities.Section;
 
-public interface ISection {
+public interface ISectionRepository {
   void save(Section section);
 
-  void remove(int sectionID);
+  void remove(int sectionId);
 
   Section find(int sectionId);
 
