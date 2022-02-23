@@ -41,7 +41,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(130, 87, 229));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Downloads\\unnamed__1_-removebg-preview (1).png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/unnamed__1_-removebg-preview (1).png"))); // NOI18N
         jLabel1.setFocusable(false);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -51,7 +51,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel2.setText("BIBLIFAL");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Downloads\\Ilustra.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Ilustra.png"))); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(4, 211, 97));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
