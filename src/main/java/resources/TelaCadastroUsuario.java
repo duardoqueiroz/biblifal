@@ -20,6 +20,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
      */
     public TelaCadastroUsuario() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
