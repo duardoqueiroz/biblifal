@@ -41,10 +41,7 @@
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jScrollPane3" min="-2" pref="891" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="127" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jScrollPane3" alignment="0" pref="1018" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -173,9 +170,6 @@
                 </Container>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
-                    <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Acer\Downloads\Voltar.png"/>
-                    </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Hand Cursor"/>
                     </Property>
