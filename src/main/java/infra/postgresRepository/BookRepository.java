@@ -16,11 +16,12 @@ public class BookRepository implements IBookRepository {
     public void save(Book book) {
         try {
             Connection conn = Postgres.getConnection();
-            String sql = "INSERT INTO books(id, title, publishing_company, author, price); VALUES(DEFAULT, ?, ?, ?, ?)";
+            String sql = "INSERT INTO books(id, title, publishing_company, author, price) VALUES(DEFAULT, ?, ?, ?, ?);";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, book.getTitle());
             pst.setString(2, book.getCompany());
             pst.setString(3, book.getAuthor());
+            pst.setFloat(4, book.getPrice());
             pst.execute();
 
             pst.close();
