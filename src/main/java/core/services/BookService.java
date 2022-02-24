@@ -35,8 +35,9 @@ public class BookService {
     }
 
     public void update(Book editBook, int bookId){
-        Book bookCurrentInfo = find(bookId);
-        if(bookCurrentInfo == editBook){
+        Book bookCurrentInfo = this.bookRepository.find(bookId);
+        
+        if(bookCurrentInfo == editBook || bookCurrentInfo == null){
             return;
         }
         this.bookRepository.update(editBook, bookId);
