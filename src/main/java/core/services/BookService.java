@@ -24,8 +24,8 @@ public class BookService {
         bookRepository.remove(bookId);
     }
 
-    public Book find(int BookId) {
-        Book Book = this.bookRepository.find(BookId);
+    public Book find(int bookId) {
+        Book Book = this.bookRepository.find(bookId);
         return Book;
     }
 
