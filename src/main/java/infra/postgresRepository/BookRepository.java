@@ -154,6 +154,16 @@ public class BookRepository implements IBookRepository {
             pst.setInt(5, bookId);
             pst.execute();
 
+           
+            for(int i = 0; i < editBook.getGenres().length; i++){
+                sql = "UPDATE book_genres SET genre_id = ? WHERE book_id = ? AND genre_id = ?;";
+                pst = conn.prepareStatement(sql);
+                pst.setInt(1, editBook.getGenres()[i].getId());
+                pst.setInt(2, bookId);
+                pst.setInt(3, i+1);
+
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
