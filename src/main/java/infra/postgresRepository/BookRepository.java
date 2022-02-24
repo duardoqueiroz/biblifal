@@ -117,6 +117,7 @@ public class BookRepository implements IBookRepository {
             pst.setString(3, editBook.getAuthor());
             pst.setFloat(4, editBook.getPrice());
             pst.setInt(5, bookId);
+            pst.execute();
 
         } catch (Exception e) {
             e.printStackTrace();
