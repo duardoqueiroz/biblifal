@@ -21,7 +21,7 @@ CREATE TABLE shelfs(
   section_id INT NOT NULL,
   capacity INT NOT NULL,
 
-  CONSTRAINT section_fk FOREIGN KEY (section_id) REFERENCES sections (id)
+  CONSTRAINT section_fk FOREIGN KEY (section_id) REFERENCES sections (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE books(
@@ -42,8 +42,8 @@ CREATE TABLE book_genres(
   book_id INT,
   genre_id INT,
 
-  CONSTRAINT book_fk FOREIGN KEY (book_id) REFERENCES books (id),
-  CONSTRAINT genre_fk FOREIGN KEY (genre_id) REFERENCES genres (id)
+  CONSTRAINT book_fk FOREIGN KEY (book_id) REFERENCES books (id) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT genre_fk FOREIGN KEY (genre_id) REFERENCES genres (id) ON DELETE CASCADE ON UPDATE CASCADE 
 );
 
 CREATE TABLE shelf_books(
@@ -52,6 +52,6 @@ CREATE TABLE shelf_books(
   book_id INT,
   quantity INT,
 
-  CONSTRAINT shelf_fk FOREIGN KEY (shelf_id) REFERENCES shelfs (id),
-  CONSTRAINT book_fk FOREIGN KEY (book_id) REFERENCES books (id)
+  CONSTRAINT shelf_fk FOREIGN KEY (shelf_id) REFERENCES shelfs (id) ON DELETE CASCADE ON UPDATE CASCADE, 
+  CONSTRAINT book_fk FOREIGN KEY (book_id) REFERENCES books (id) ON DELETE CASCADE ON UPDATE CASCADE
 );
