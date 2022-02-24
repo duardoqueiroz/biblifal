@@ -24,6 +24,15 @@ public class BookRepository implements IBookRepository {
             pst.setFloat(4, book.getPrice());
             pst.execute();
 
+            for(int i = 0; i < book.getGenres().length; i++){
+                sql = "INSERT INTO book_genres(id, book_id, genre_id) VALUES(DEFAULT, ?, ?);";
+                pst = conn.prepareStatement(sql);
+
+                pst.setInt(1, book.getId());
+                pst.setInt(2, book.getGenres()[i].getId());
+                pst.execute();
+            }
+
             pst.close();
             conn.close();
         } catch (Exception e) {
@@ -58,13 +67,26 @@ public class BookRepository implements IBookRepository {
             ResultSet rst = pst.executeQuery();
 
             while (rst.next()){
+                
                 int id = rst.getInt("id");
                 String title = rst.getString("title");
                 String company = rst.getString("publishing_company");
                 String author = rst.getString("author");
                 Float price = rst.getFloat("price");
-                Genre[] genres = {new Genre("genre123")};//TODO 
-                book = new Book(id, title, company,author, price, genres);//TODO
+                sql = "SELECT * FROM genres INNER JOIN book_genres ON book_genres.genre_id = genres.id INNER JOIN books ON book_genres.book_id = books.id WHERE books.id = ?;";
+                pst = conn.prepareStatement(sql);
+                pst.setInt(1, bookId);
+                ResultSet rst2 = pst.executeQuery();
+                Genre[] genres = new Genre[3];
+                int i = 0;
+                while(rst2.next()){
+                    int genreId = rst2.getInt("id");
+                    String genreName = rst2.getString("name");
+                    genres[i] = new Genre(genreId, genreName);
+                    i++;
+                }
+                book = new Book(id, title, company,author, price, genres);
+                rst2.close();
             }
             conn.close();
             pst.close();
@@ -90,8 +112,20 @@ public class BookRepository implements IBookRepository {
                 String company = rst.getString("publishing_company");
                 String author = rst.getString("author");
                 float price = rst.getFloat("price");
-                Genre[] genres = {new Genre("genre123")};//TODO 
-                Book book = new Book(id, title, company,author, price, genres);//TODO
+                sql = "SELECT * FROM genres INNER JOIN book_genres ON book_genres.genre_id = genres.id INNER JOIN books ON book_genres.book_id = books.id WHERE books.id = ?;";
+                pst = conn.prepareStatement(sql);
+                pst.setInt(1, id);
+                ResultSet rst2 = pst.executeQuery();
+                Genre[] genres = new Genre[3];
+                int i = 0;
+                while(rst2.next()){
+                    int genreId = rst2.getInt("id");
+                    String genreName = rst2.getString("name");
+                    genres[i] = new Genre(genreId, genreName);
+                    i++;
+                }
+                rst2.close();
+                Book book = new Book(id, title, company,author, price, genres);
                 books.add(book);
             }
 
