@@ -25,8 +25,9 @@ public class BookService {
     }
 
     public Book find(int bookId) {
-        Book Book = this.bookRepository.find(bookId);
+        Book book = this.bookRepository.find(bookId);
         return Book;
+
     }
 
     public ArrayList<Book> findAll() {
