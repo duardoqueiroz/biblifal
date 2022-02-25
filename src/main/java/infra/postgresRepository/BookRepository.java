@@ -128,7 +128,7 @@ public class BookRepository implements IBookRepository {
                 Book book = new Book(id, title, company,author, price, genres);
                 books.add(book);
             }
-
+            pst.execute();
             conn.close();
             pst.close();
             rst.close();
