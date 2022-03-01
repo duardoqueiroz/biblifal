@@ -42,7 +42,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(130, 87, 229));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources.img/unnamed__1_-removebg-preview (1).png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources.img/unnamed__1_-removebg-preview.png"))); // NOI18N
         jLabel1.setFocusable(false);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -210,6 +210,7 @@ public class TelaInicial extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new TelaInicial().setVisible(true);
             }
