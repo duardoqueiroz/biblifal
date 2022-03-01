@@ -30,7 +30,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
          */
         @SuppressWarnings("unchecked")
         // <editor-fold defaultstate="collapsed" desc="Generated
-        // Code">                          
+        // Code">//GEN-BEGIN:initComponents
         private void initComponents() {
 
                 jScrollPane1 = new javax.swing.JScrollPane();
@@ -431,7 +431,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                                                 .addGap(0, 127, Short.MAX_VALUE)));
 
                 pack();
-        }// </editor-fold>                        
+        }// </editor-fold>//GEN-END:initComponents
 
         private void emailActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_emailActionPerformed
                 // TODO add your handling code here:
@@ -525,7 +525,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                 });
         }
 
-        // Variables declaration - do not modify                     
+        // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JPasswordField confirmPassword;
         private javax.swing.JTextField email;
         private javax.swing.JButton jButton1;
@@ -554,5 +554,5 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         private javax.swing.JScrollPane jScrollPane3;
         private javax.swing.JTextField name;
         private javax.swing.JPasswordField password;
-        // End of variables declaration                   
+        // End of variables declaration//GEN-END:variables
 }
