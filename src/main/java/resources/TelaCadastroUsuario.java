@@ -525,7 +525,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                 });
         }
 
-     // Variables declaration - do not modify                     
+        // Variables declaration - do not modify                     
         private javax.swing.JPasswordField confirmPassword;
         private javax.swing.JTextField email;
         private javax.swing.JButton jButton1;
@@ -554,5 +554,5 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         private javax.swing.JScrollPane jScrollPane3;
         private javax.swing.JTextField name;
         private javax.swing.JPasswordField password;
-        // End of variables declaration
+        // End of variables declaration                   
 }
