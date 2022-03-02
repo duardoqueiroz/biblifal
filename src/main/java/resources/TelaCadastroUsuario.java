@@ -407,6 +407,13 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         t.setVisible(true);
     }//GEN-LAST:event_jLabel11MouseClicked
 
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        TelaInicial t = new TelaInicial();
+        this.dispose();
+        t.setVisible(true);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
     /**
      * @param args the command line arguments
      */
