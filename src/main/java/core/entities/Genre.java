@@ -20,4 +20,9 @@ public class Genre {
   public int getId() {
     return id;
   }
+
+  @Override
+  public String toString() {
+    return "Genre [id=" + id + ", name=" + name + "]";
+  }
 }

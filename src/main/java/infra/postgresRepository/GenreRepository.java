@@ -65,7 +65,7 @@ public class GenreRepository implements IGenreRepository {
     } catch (Exception e) {
       e.printStackTrace();
     }
-    return null;
+    return genres;
   }
 
   @Override
