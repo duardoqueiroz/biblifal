@@ -5,7 +5,6 @@
  */
 package resources;
 
-import core.entities.User;
 import infra.controllers.UsersController;
 import javax.swing.JOptionPane;
 
