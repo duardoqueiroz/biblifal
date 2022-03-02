@@ -41,7 +41,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(130, 87, 229));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources.images/IFLogo.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/IFLogo.png"))); // NOI18N
         jLabel1.setFocusable(false);
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
@@ -51,7 +51,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jLabel2.setText("BIBLIFAL");
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources.images/Ilustra.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/resources/images/Ilustra.png"))); // NOI18N
 
         jButton1.setBackground(new java.awt.Color(4, 211, 97));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -85,6 +85,11 @@ public class TelaInicial extends javax.swing.JFrame {
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Sair");
         jButton5.setBorderPainted(false);
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+        });
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
@@ -167,6 +172,9 @@ public class TelaInicial extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
+        TelaLogin t = new TelaLogin();
+        this.dispose();
+        t.setVisible(true);
     }//GEN-LAST:event_jButton1MouseClicked
 
     /**
