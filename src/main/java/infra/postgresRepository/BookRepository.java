@@ -16,7 +16,7 @@ public class BookRepository implements IBookRepository {
     public void save(Book book) {
         try {
             Connection conn = Postgres.getConnection();
-            String sql = "INSERT INTO books(id, title, publishing_company, author, price) VALUES(DEFAULT, ?, ?, ?, ?);";
+            String sql = "INSERT INTO books(id, title, publishing_company, author, price) VALUES(DEFAULT, ?, ?, ?, ?) RETURNING ID;";
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, book.getTitle());
             pst.setString(2, book.getCompany());
@@ -24,38 +24,47 @@ public class BookRepository implements IBookRepository {
             pst.setFloat(4, book.getPrice());
             pst.execute();
 
-            for(int i = 0; i < book.getGenres().length; i++){
-                sql = "INSERT INTO book_genres(id, book_id, genre_id) VALUES(DEFAULT, ?, ?);";
-                pst = conn.prepareStatement(sql);
+            ResultSet lastBook = pst.getResultSet();
+            int lastBookId = -1;
+            if (lastBook.next()) {
+                lastBookId = lastBook.getInt("id");
+            }
 
-                pst.setInt(1, book.getId());
-                pst.setInt(2, book.getGenres()[i].getId());
-                pst.execute();
+            for (int i = 0; i < book.getGenres().length; i++) {
+                if (book.getGenres()[i] != null) {
+                    sql = "INSERT INTO book_genres(id, book_id, genre_id) VALUES(DEFAULT, ?, ?);";
+                    pst = conn.prepareStatement(sql);
+
+                    pst.setInt(1, lastBookId);
+                    pst.setInt(2, book.getGenres()[i].getId());
+                    pst.execute();
+                }
             }
 
             pst.close();
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
-        }    
+        }
     }
 
     @Override
-        public void remove(int bookId) {
-            try {
-                Connection conn = Postgres.getConnection();
-                String sql = "DELETE FROM books WHERE id = ?;";
-                PreparedStatement pst = conn.prepareStatement(sql);
-                pst.setInt(1, bookId);
-                pst.execute();
+    public void remove(int bookId) {
+        try {
+            Connection conn = Postgres.getConnection();
+            String sql = "DELETE FROM books WHERE id = ?;";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, bookId);
+            pst.execute();
 
-                pst.close();
-                conn.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            
+            pst.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+
+    }
+
     @Override
     public Book find(int bookId) {
         Book book = null;
@@ -66,8 +75,8 @@ public class BookRepository implements IBookRepository {
             pst.setInt(1, bookId);
             ResultSet rst = pst.executeQuery();
 
-            while (rst.next()){
-                
+            while (rst.next()) {
+
                 int id = rst.getInt("id");
                 String title = rst.getString("title");
                 String company = rst.getString("publishing_company");
@@ -79,13 +88,13 @@ public class BookRepository implements IBookRepository {
                 ResultSet rst2 = pst.executeQuery();
                 Genre[] genres = new Genre[3];
                 int i = 0;
-                while(rst2.next()){
+                while (rst2.next()) {
                     int genreId = rst2.getInt("id");
                     String genreName = rst2.getString("name");
                     genres[i] = new Genre(genreId, genreName);
                     i++;
                 }
-                book = new Book(id, title, company,author, price, genres);
+                book = new Book(id, title, company, author, price, genres);
                 rst2.close();
             }
             conn.close();
@@ -101,12 +110,12 @@ public class BookRepository implements IBookRepository {
     @Override
     public ArrayList<Book> findAll() {
         ArrayList<Book> books = new ArrayList<>();
-        try{
+        try {
             Connection conn = Postgres.getConnection();
             String sql = "SELECT * FROM books;";
             PreparedStatement pst = conn.prepareStatement(sql);
             ResultSet rst = pst.executeQuery();
-            while(rst.next()) {
+            while (rst.next()) {
                 int id = rst.getInt("id");
                 String title = rst.getString("title");
                 String company = rst.getString("publishing_company");
@@ -118,14 +127,14 @@ public class BookRepository implements IBookRepository {
                 ResultSet rst2 = pst.executeQuery();
                 Genre[] genres = new Genre[3];
                 int i = 0;
-                while(rst2.next()){
+                while (rst2.next()) {
                     int genreId = rst2.getInt("id");
                     String genreName = rst2.getString("name");
                     genres[i] = new Genre(genreId, genreName);
                     i++;
                 }
                 rst2.close();
-                Book book = new Book(id, title, company,author, price, genres);
+                Book book = new Book(id, title, company, author, price, genres);
                 books.add(book);
             }
             pst.execute();
@@ -136,7 +145,6 @@ public class BookRepository implements IBookRepository {
             e.printStackTrace();
         }
 
-
         return books;
     }
 
@@ -146,7 +154,7 @@ public class BookRepository implements IBookRepository {
             Connection conn = Postgres.getConnection();
             String sql = "UPDATE books SET title = ?, publishing_company = ?, author = ?, price = ? WHERE id = ?;";
             PreparedStatement pst = conn.prepareStatement(sql);
-            //pst.setString();
+            // pst.setString();
             pst.setString(1, editBook.getTitle());
             pst.setString(2, editBook.getCompany());
             pst.setString(3, editBook.getAuthor());
@@ -154,23 +162,19 @@ public class BookRepository implements IBookRepository {
             pst.setInt(5, bookId);
             pst.execute();
 
-           
-            for(int i = 0; i < editBook.getGenres().length; i++){
+            for (int i = 0; i < editBook.getGenres().length; i++) {
                 sql = "UPDATE book_genres SET genre_id = ? WHERE book_id = ? AND genre_id = ?;";
                 pst = conn.prepareStatement(sql);
                 pst.setInt(1, editBook.getGenres()[i].getId());
                 pst.setInt(2, bookId);
-                pst.setInt(3, i+1);
+                pst.setInt(3, i + 1);
 
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
-
-   
-    
 }
