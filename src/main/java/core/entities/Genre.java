@@ -1,8 +1,8 @@
 package core.entities;
 
 public class Genre {
-  private String name;
   private int id;
+  private String name;
 
   public Genre(int id, String name) {
     this.name = name;

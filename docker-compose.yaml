@@ -1,8 +1,8 @@
-version: '2.0'
+version: "2.0"
 services:
-  tdm_database:
+  biblifal_database:
     image: postgres
-    container_name: tdm_database
+    container_name: biblifal_database
     environment:
       POSTGRES_DB: ${PG_DB_NAME}
       POSTGRES_PASSWORD: ${PG_PASSWORD}
