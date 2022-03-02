@@ -33,45 +33,45 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jPanel6 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        email = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        name = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        password = new javax.swing.JPasswordField();
-        confirmPassword = new javax.swing.JPasswordField();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+                jScrollPane1 = new javax.swing.JScrollPane();
+                jScrollPane2 = new javax.swing.JScrollPane();
+                jScrollPane3 = new javax.swing.JScrollPane();
+                jPanel2 = new javax.swing.JPanel();
+                jPanel1 = new javax.swing.JPanel();
+                jPanel4 = new javax.swing.JPanel();
+                jLabel11 = new javax.swing.JLabel();
+                jPanel3 = new javax.swing.JPanel();
+                jPanel6 = new javax.swing.JPanel();
+                jPanel7 = new javax.swing.JPanel();
+                jPanel5 = new javax.swing.JPanel();
+                jLabel4 = new javax.swing.JLabel();
+                jLabel5 = new javax.swing.JLabel();
+                email = new javax.swing.JTextField();
+                jLabel6 = new javax.swing.JLabel();
+                name = new javax.swing.JTextField();
+                jLabel7 = new javax.swing.JLabel();
+                jLabel8 = new javax.swing.JLabel();
+                jButton1 = new javax.swing.JButton();
+                jLabel9 = new javax.swing.JLabel();
+                jLabel10 = new javax.swing.JLabel();
+                password = new javax.swing.JPasswordField();
+                confirmPassword = new javax.swing.JPasswordField();
+                jPanel8 = new javax.swing.JPanel();
+                jPanel9 = new javax.swing.JPanel();
+                jLabel1 = new javax.swing.JLabel();
+                jLabel2 = new javax.swing.JLabel();
+                jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 255, 255));
+                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setBackground(new java.awt.Color(255, 255, 255));
 
-        jScrollPane3.setToolTipText("");
+                jScrollPane3.setToolTipText("");
 
-        jPanel2.setBackground(new java.awt.Color(229, 229, 229));
+                jPanel2.setBackground(new java.awt.Color(229, 229, 229));
 
-        jPanel1.setBackground(new java.awt.Color(130, 87, 229));
+                jPanel1.setBackground(new java.awt.Color(130, 87, 229));
 
-        jPanel4.setLayout(new javax.swing.OverlayLayout(jPanel4));
+                jPanel4.setLayout(new javax.swing.OverlayLayout(jPanel4));
 
         jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Acer\\Downloads\\Voltar.png")); // NOI18N
         jLabel11.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -105,11 +105,11 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)));
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel6.setBackground(new java.awt.Color(130, 87, 229));
+                jPanel6.setBackground(new java.awt.Color(130, 87, 229));
 
-        jPanel7.setLayout(new javax.swing.OverlayLayout(jPanel7));
+                jPanel7.setLayout(new javax.swing.OverlayLayout(jPanel7));
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -128,79 +128,79 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(33, 33, 33)));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+                jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel4.setBackground(new java.awt.Color(50, 38, 77));
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(50, 38, 77));
-        jLabel4.setText("Dados");
+                jLabel4.setBackground(new java.awt.Color(50, 38, 77));
+                jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+                jLabel4.setForeground(new java.awt.Color(50, 38, 77));
+                jLabel4.setText("Dados");
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(156, 152, 166));
-        jLabel5.setText("Nome");
+                jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                jLabel5.setForeground(new java.awt.Color(156, 152, 166));
+                jLabel5.setText("Nome");
 
-        email.setForeground(new java.awt.Color(156, 152, 166));
-        email.setCaretColor(new java.awt.Color(230, 230, 240));
-        email.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emailActionPerformed(evt);
-            }
-        });
+                email.setForeground(new java.awt.Color(156, 152, 166));
+                email.setCaretColor(new java.awt.Color(230, 230, 240));
+                email.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                emailActionPerformed(evt);
+                        }
+                });
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(156, 152, 166));
-        jLabel6.setText("Email");
+                jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                jLabel6.setForeground(new java.awt.Color(156, 152, 166));
+                jLabel6.setText("Email");
 
-        name.setForeground(new java.awt.Color(156, 152, 166));
-        name.setCaretColor(new java.awt.Color(230, 230, 240));
-        name.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nameActionPerformed(evt);
-            }
-        });
+                name.setForeground(new java.awt.Color(156, 152, 166));
+                name.setCaretColor(new java.awt.Color(230, 230, 240));
+                name.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                nameActionPerformed(evt);
+                        }
+                });
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(156, 152, 166));
-        jLabel7.setText("Senha");
+                jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                jLabel7.setForeground(new java.awt.Color(156, 152, 166));
+                jLabel7.setText("Senha");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(156, 152, 166));
-        jLabel8.setText("Confirmar senha");
+                jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+                jLabel8.setForeground(new java.awt.Color(156, 152, 166));
+                jLabel8.setText("Confirmar senha");
 
-        jButton1.setBackground(new java.awt.Color(4, 211, 97));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("Salvar cadastro");
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+                jButton1.setBackground(new java.awt.Color(4, 211, 97));
+                jButton1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+                jButton1.setForeground(new java.awt.Color(255, 255, 255));
+                jButton1.setText("Salvar cadastro");
+                jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+                        public void mouseClicked(java.awt.event.MouseEvent evt) {
+                                jButton1MouseClicked(evt);
+                        }
+                });
+                jButton1.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                jButton1ActionPerformed(evt);
+                        }
+                });
 
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(160, 160, 178));
-        jLabel9.setText("Importante!");
+                jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                jLabel9.setForeground(new java.awt.Color(160, 160, 178));
+                jLabel9.setText("Importante!");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(160, 160, 178));
-        jLabel10.setText("Preencha todos os dados");
+                jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+                jLabel10.setForeground(new java.awt.Color(160, 160, 178));
+                jLabel10.setText("Preencha todos os dados");
 
-        password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                passwordActionPerformed(evt);
-            }
-        });
+                password.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                passwordActionPerformed(evt);
+                        }
+                });
 
-        confirmPassword.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                confirmPasswordActionPerformed(evt);
-            }
-        });
+                confirmPassword.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                confirmPasswordActionPerformed(evt);
+                        }
+                });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -280,26 +280,26 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                 .addComponent(jLabel10)
                                 .addGap(53, 53, 53)));
 
-        jPanel8.setBackground(new java.awt.Color(130, 87, 229));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+                jPanel8.setBackground(new java.awt.Color(130, 87, 229));
+                jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel9.setLayout(new javax.swing.OverlayLayout(jPanel9));
-        jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 34, -1, -1));
+                jPanel9.setLayout(new javax.swing.OverlayLayout(jPanel9));
+                jPanel8.add(jPanel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(216, 34, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Cadastrar");
-        jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
+                jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+                jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+                jLabel1.setText("Cadastrar");
+                jPanel8.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(212, 194, 255));
-        jLabel2.setText("O primeiro passo é preencher ");
-        jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, -1));
+                jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+                jLabel2.setForeground(new java.awt.Color(212, 194, 255));
+                jLabel2.setText("O primeiro passo é preencher ");
+                jPanel8.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(212, 194, 255));
-        jLabel3.setText("esse formulário de inscrição.");
-        jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
+                jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
+                jLabel3.setForeground(new java.awt.Color(212, 194, 255));
+                jLabel3.setText("esse formulário de inscrição.");
+                jPanel8.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, -1, -1));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -346,7 +346,7 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addContainerGap(229, Short.MAX_VALUE)));
 
-        jScrollPane3.setViewportView(jPanel2);
+                jScrollPane3.setViewportView(jPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -360,8 +360,8 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
                                         javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 127, Short.MAX_VALUE)));
 
-        pack();
-    }// </editor-fold>//GEN-END:initComponents
+                pack();
+        }// </editor-fold>//GEN-END:initComponents
 
     private void emailActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
@@ -457,34 +457,34 @@ public class TelaCadastroUsuario extends javax.swing.JFrame {
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField confirmPassword;
-    private javax.swing.JTextField email;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextField name;
-    private javax.swing.JPasswordField password;
-    // End of variables declaration//GEN-END:variables
+        // Variables declaration - do not modify//GEN-BEGIN:variables
+        private javax.swing.JPasswordField confirmPassword;
+        private javax.swing.JTextField email;
+        private javax.swing.JButton jButton1;
+        private javax.swing.JLabel jLabel1;
+        private javax.swing.JLabel jLabel10;
+        private javax.swing.JLabel jLabel11;
+        private javax.swing.JLabel jLabel2;
+        private javax.swing.JLabel jLabel3;
+        private javax.swing.JLabel jLabel4;
+        private javax.swing.JLabel jLabel5;
+        private javax.swing.JLabel jLabel6;
+        private javax.swing.JLabel jLabel7;
+        private javax.swing.JLabel jLabel8;
+        private javax.swing.JLabel jLabel9;
+        private javax.swing.JPanel jPanel1;
+        private javax.swing.JPanel jPanel2;
+        private javax.swing.JPanel jPanel3;
+        private javax.swing.JPanel jPanel4;
+        private javax.swing.JPanel jPanel5;
+        private javax.swing.JPanel jPanel6;
+        private javax.swing.JPanel jPanel7;
+        private javax.swing.JPanel jPanel8;
+        private javax.swing.JPanel jPanel9;
+        private javax.swing.JScrollPane jScrollPane1;
+        private javax.swing.JScrollPane jScrollPane2;
+        private javax.swing.JScrollPane jScrollPane3;
+        private javax.swing.JTextField name;
+        private javax.swing.JPasswordField password;
+        // End of variables declaration//GEN-END:variables
 }
