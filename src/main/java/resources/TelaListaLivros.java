@@ -29,7 +29,7 @@ public class TelaListaLivros extends javax.swing.JFrame {
             textArea.append("Título: "+uc.findAll().get(i).getTitle()+", ");
             textArea.append("Publicador(a): "+uc.findAll().get(i).getCompany()+", ");
             textArea.append("Autor(a): "+uc.findAll().get(i).getAuthor()+", ");
-            textArea.append("Preço: "+price+", ");
+            textArea.append("Preço: R$"+price+", ");
             textArea.append("Gênero: "+genres+ "\n"); 
         }
     }
