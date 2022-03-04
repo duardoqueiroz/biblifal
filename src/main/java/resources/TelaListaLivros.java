@@ -22,7 +22,7 @@ public class TelaListaLivros extends javax.swing.JFrame {
         
         BooksController uc = new BooksController();
         
-        /*for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < uc.findAll().size(); i++) {
             String price = String.valueOf(uc.findAll().get(i).getPrice());
             String genres = String.valueOf(uc.findAll().get(i).getGenres());
             
@@ -30,10 +30,8 @@ public class TelaListaLivros extends javax.swing.JFrame {
             textArea.append("Publicador(a): "+uc.findAll().get(i).getCompany()+", ");
             textArea.append("Autor(a): "+uc.findAll().get(i).getAuthor()+", ");
             textArea.append("Preço: "+price+", ");
-            textArea.append("Gênero: "+genres+ "\n");
-
-            
-        }*/
+            textArea.append("Gênero: "+genres+ "\n"); 
+        }
     }
 
     /**
@@ -53,6 +51,7 @@ public class TelaListaLivros extends javax.swing.JFrame {
 
         textArea.setColumns(20);
         textArea.setRows(5);
+        textArea.setEnabled(false);
         jScrollPane1.setViewportView(textArea);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
