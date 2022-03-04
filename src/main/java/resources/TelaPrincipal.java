@@ -5,6 +5,8 @@
  */
 package resources;
 
+import core.entities.User;
+
 /**
  *
  * @author Acer
@@ -14,7 +16,9 @@ public class TelaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form TelaInicial
      */
-    public TelaPrincipal() {
+    User user;
+    public TelaPrincipal(User user) {
+        this.user = user;
         initComponents();
         setExtendedState(MAXIMIZED_BOTH);
     }
@@ -218,7 +222,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new TelaPrincipal().setVisible(true);
+                new TelaPrincipal(null).setVisible(true);
             }
         });
     }
