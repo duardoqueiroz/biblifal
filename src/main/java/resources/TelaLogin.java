@@ -8,6 +8,8 @@ package resources;
 import infra.controllers.UsersController;
 import javax.swing.JOptionPane;
 
+import core.entities.User;
+
 /**
  *
  * @author Acer
@@ -391,18 +393,12 @@ public class TelaLogin extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
                 } else {
                         UsersController us = new UsersController();
-                        boolean user = us.authenticate(email.getText(), password).getIsManager();
+                        User user = us.authenticate(email.getText(), password);
 
-                        if (!user) {
-                                TelaPrincipal t = new TelaPrincipal();
+                        if (user != null) {
+                                TelaPrincipal t = new TelaPrincipal(user);
                                 this.dispose();
                                 t.setVisible(true);
-                        } else if (user) {
-                                
-                                TelaPrincipalGerente t = new TelaPrincipalGerente();
-                                this.dispose();
-                                t.setVisible(true);
-                                
                         } else {
                                 JOptionPane.showMessageDialog(null, "Credenciais inválidas");
                         }
