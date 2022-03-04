@@ -398,11 +398,11 @@ public class TelaLogin extends javax.swing.JFrame {
                                 this.dispose();
                                 t.setVisible(true);
                         } else if (user) {
-                                /*
-                                 * TelaPrincipalGerente t = new TelaPrincipalGerente();
-                                 * this.dispose();
-                                 * t.setVisible(true);
-                                 */
+                                
+                                TelaPrincipalGerente t = new TelaPrincipalGerente();
+                                this.dispose();
+                                t.setVisible(true);
+                                
                         } else {
                                 JOptionPane.showMessageDialog(null, "Credenciais inválidas");
                         }
