@@ -18,10 +18,11 @@ public class TelaListaLivros extends javax.swing.JFrame {
      */
     public TelaListaLivros() {
         initComponents();
+        setExtendedState(MAXIMIZED_BOTH);
         
         BooksController uc = new BooksController();
         
-        for (int i = 0; i < 2; i++) {
+        /*for (int i = 0; i < 2; i++) {
             String price = String.valueOf(uc.findAll().get(i).getPrice());
             String genres = String.valueOf(uc.findAll().get(i).getGenres());
             
@@ -32,7 +33,7 @@ public class TelaListaLivros extends javax.swing.JFrame {
             textArea.append("Gênero: "+genres+ "\n");
 
             
-        }
+        }*/
     }
 
     /**
