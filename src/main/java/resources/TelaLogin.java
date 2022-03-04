@@ -385,7 +385,7 @@ public class TelaLogin extends javax.swing.JFrame {
         private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jButton1MouseClicked
                 // TODO add your handling code here:
 
-                String password = String.valueOf(senha);
+                String password = String.valueOf(senha.getPassword());
 
                 if ("".equalsIgnoreCase(email.getText()) || "".equalsIgnoreCase(password)) {
                         JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
