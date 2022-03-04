@@ -22,7 +22,7 @@ public class TelaListaLivros extends javax.swing.JFrame {
                 
             BooksController uc = new BooksController();
         
-            /*for (int i = 0; i < uc.findAll().size(); i++) {
+            for (int i = 0; i < uc.findAll().size(); i++) {
                 String price = String.valueOf(uc.findAll().get(i).getPrice());
                 String genres = String.valueOf(uc.findAll().get(i).getGenres());
             
@@ -31,7 +31,7 @@ public class TelaListaLivros extends javax.swing.JFrame {
                 textArea.append("Autor(a): "+uc.findAll().get(i).getAuthor()+", ");
                 textArea.append("Preço: R$"+price+", ");
                 textArea.append("Gênero: "+genres+ "\n"); 
-            }*/
+            }
         }
 
         /**
@@ -223,9 +223,9 @@ public class TelaListaLivros extends javax.swing.JFrame {
 
         private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel11MouseClicked
                 // TODO add your handling code here:
-                // TelaInicial t = new TelaInicial();
-                // this.dispose();
-                // t.setVisible(true);
+                //TelaPrincipal t = new TelaPrincipal();
+                //this.dispose();
+                //t.setVisible(true);
         }// GEN-LAST:event_jLabel11MouseClicked
 
         /**
