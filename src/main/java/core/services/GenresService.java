@@ -24,6 +24,10 @@ public class GenresService {
     genreRepository.remove(genreId);
   }
 
+  public Genre find(int genreId) {
+    return this.genreRepository.find(genreId);
+  }
+
   public ArrayList<Genre> findAll() {
     ArrayList<Genre> genres = this.genreRepository.findAll();
     return genres;
