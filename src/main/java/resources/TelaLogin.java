@@ -394,12 +394,12 @@ public class TelaLogin extends javax.swing.JFrame {
                         boolean user = us.authenticate(email.getText(), password).getIsManager();
 
                         if (!user) {
-                                TelaInicial t = new TelaInicial();
+                                TelaPrincipal t = new TelaPrincipal();
                                 this.dispose();
                                 t.setVisible(true);
                         } else if (user) {
                                 /*
-                                 * TelaInicialUsuario t = new TelaInicialUsuario();
+                                 * TelaPrincipalGerente t = new TelaPrincipalGerente();
                                  * this.dispose();
                                  * t.setVisible(true);
                                  */
