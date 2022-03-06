@@ -14,16 +14,8 @@ public class Shelf {
     return section;
   }
 
-  public void setSection(Section section) {
-    this.section = section;
-  }
-
   public int getCapacity() {
     return capacity;
-  }
-
-  public void setCapacity(int capacity) {
-    this.capacity = capacity;
   }
 
   @Override
@@ -33,10 +25,6 @@ public class Shelf {
 
   public int getId() {
     return id;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
 }

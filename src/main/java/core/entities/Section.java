@@ -23,10 +23,6 @@ public class Section {
     return description;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
   @Override
   public String toString() {
     return "Section [Id=" + id + ", description=" + description + ", name=" + name + "]";
@@ -35,6 +31,5 @@ public class Section {
   public int getId() {
     return id;
   }
-
 
 }
