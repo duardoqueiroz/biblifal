@@ -37,13 +37,13 @@ public class SectionRepository implements ISectionRepository {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setInt(1, sectionId);
             pst.execute();
-            
+
             pst.close();
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }
 
     @Override
@@ -55,8 +55,7 @@ public class SectionRepository implements ISectionRepository {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setInt(1, sectionId);
             ResultSet rst = pst.executeQuery();
-            
-            while (rst.next()){
+            while (rst.next()) {
                 int id = rst.getInt("id");
                 String name = rst.getString("name");
                 String description = rst.getString("description");
@@ -80,7 +79,7 @@ public class SectionRepository implements ISectionRepository {
             String sql = "SELECT * FROM sections;";
             PreparedStatement pst = conn.prepareStatement(sql);
             ResultSet rst = pst.executeQuery();
-            while(rst.next()) {
+            while (rst.next()) {
                 int id = rst.getInt("id");
                 String name = rst.getString("name");
                 String description = rst.getString("description");
@@ -94,7 +93,7 @@ public class SectionRepository implements ISectionRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-         return sections;
+        return sections;
     }
-    
+
 }
