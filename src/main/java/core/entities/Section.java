@@ -6,9 +6,9 @@ public class Section {
   private String description;
 
   public Section(int id, String name, String description) {
+    this.id = id;
     this.name = name;
     this.description = description;
-    this.id = id;
   }
 
   public String getName() {
@@ -29,15 +29,12 @@ public class Section {
 
   @Override
   public String toString() {
-    return "Section [Id="+ id + ", description=" + description + ", name=" + name + "]";
+    return "Section [Id=" + id + ", description=" + description + ", name=" + name + "]";
   }
 
   public int getId() {
     return id;
   }
 
-  public void setId(int id) {
-    this.id = id;
-  }
-  
+
 }
