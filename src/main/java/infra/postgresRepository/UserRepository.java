@@ -45,8 +45,7 @@ public class UserRepository implements IUserRepository {
         String email = rst.getString("email");
         String password = rst.getString("password");
         boolean isManager = rst.getBoolean("is_manager");
-        User user = new User(id, name, email, password);
-        user.setIsManager(isManager);
+        User user = new User(id, name, email, password, isManager);
         users.add(user);
       }
 
@@ -74,8 +73,7 @@ public class UserRepository implements IUserRepository {
         String name = rst.getString("name");
         String password = rst.getString("password");
         boolean isManager = rst.getBoolean("is_manager");
-        user = new User(id, name, email, password);
-        user.setIsManager(isManager);
+        user = new User(id, name, email, password, isManager);
       }
       pst.close();
       conn.close();

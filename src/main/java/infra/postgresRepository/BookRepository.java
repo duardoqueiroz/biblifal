@@ -137,7 +137,6 @@ public class BookRepository implements IBookRepository {
                 Book book = new Book(id, title, company, author, price, genres);
                 books.add(book);
             }
-            pst.execute();
             conn.close();
             pst.close();
             rst.close();
@@ -160,21 +159,27 @@ public class BookRepository implements IBookRepository {
             pst.setString(3, editBook.getAuthor());
             pst.setFloat(4, editBook.getPrice());
             pst.setInt(5, bookId);
+            pst.executeUpdate();
+
+            sql = "DELETE FROM book_genres WHERE book_id = ?;";
+            pst = conn.prepareStatement(sql);
+            pst.setInt(1, bookId);
             pst.execute();
 
             for (int i = 0; i < editBook.getGenres().length; i++) {
-                sql = "UPDATE book_genres SET genre_id = ? WHERE book_id = ? AND genre_id = ?;";
-                pst = conn.prepareStatement(sql);
-                pst.setInt(1, editBook.getGenres()[i].getId());
-                pst.setInt(2, bookId);
-                pst.setInt(3, i + 1);
-
+                if (editBook.getGenres()[i] != null) {
+                    sql = "INSERT INTO book_genres(id,book_id,genre_id) VALUES(DEFAULT,?,?);";
+                    pst = conn.prepareStatement(sql);
+                    pst.setInt(1, bookId);
+                    pst.setInt(2, editBook.getGenres()[i].getId());
+                    pst.executeUpdate();
+                }
             }
 
+            pst.close();
+            conn.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
-
 }

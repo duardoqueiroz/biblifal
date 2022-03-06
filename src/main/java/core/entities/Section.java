@@ -23,21 +23,13 @@ public class Section {
     return description;
   }
 
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
   @Override
   public String toString() {
-    return "Section [Id="+ id + ", description=" + description + ", name=" + name + "]";
+    return "Section [Id=" + id + ", description=" + description + ", name=" + name + "]";
   }
 
   public int getId() {
     return id;
   }
 
-  public void setId(int id) {
-    this.id = id;
-  }
-  
 }

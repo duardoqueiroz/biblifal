@@ -6,7 +6,7 @@ public class User {
   private Boolean isManager = false;
   private String email;
 
-  public User(int id, String name, String email, String password) {
+  public User(int id, String name, String email, String password, boolean isManager) {
     if ((email.isEmpty() || email.contains(" ")) || (name.isEmpty())
         || (password.isEmpty() || password.contains(" "))) {
       return;
@@ -20,6 +20,7 @@ public class User {
     this.name = name;
     this.email = email;
     this.password = password;
+    this.isManager = isManager;
   }
 
   @Override
@@ -33,14 +34,6 @@ public class User {
 
   public Boolean getIsManager() {
     return isManager;
-  }
-
-  public void setIsManager(Boolean isManager) {
-    this.isManager = isManager;
-  }
-
-  public void setId(int id) {
-    this.id = id;
   }
 
   public String getEmail() {

@@ -6,9 +6,9 @@ import core.entities.Book;
 import core.repository.IBookRepository;
 
 public class BookService {
-    IBookRepository bookRepository;
+    private IBookRepository bookRepository;
 
-    public BookService(IBookRepository bookRepository){
+    public BookService(IBookRepository bookRepository) {
         this.bookRepository = bookRepository;
     }
 
@@ -18,7 +18,7 @@ public class BookService {
 
     public void remove(int bookId) {
         Book doesNotExists = this.bookRepository.find(bookId);
-        if(doesNotExists == null){
+        if (doesNotExists == null) {
             return;
         }
         bookRepository.remove(bookId);
@@ -35,10 +35,9 @@ public class BookService {
         return books;
     }
 
-    public void update(Book editBook, int bookId){
+    public void update(Book editBook, int bookId) {
         Book bookCurrentInfo = this.bookRepository.find(bookId);
-
-        if(bookCurrentInfo == editBook || bookCurrentInfo == null){
+        if (bookCurrentInfo == editBook || bookCurrentInfo == null) {
             return;
         }
         this.bookRepository.update(editBook, bookId);

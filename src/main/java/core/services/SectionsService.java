@@ -3,6 +3,7 @@ package core.services;
 import java.util.ArrayList;
 
 import core.entities.Section;
+import core.entities.Shelf;
 import core.repository.ISectionRepository;
 
 public class SectionsService {
@@ -18,7 +19,7 @@ public class SectionsService {
 
     public void remove(int sectionId) {
         Section doesNotExists = this.sectionRepository.find(sectionId);
-        if(doesNotExists == null){
+        if (doesNotExists == null) {
             return;
         }
         sectionRepository.remove(sectionId);
@@ -34,5 +35,25 @@ public class SectionsService {
         return sections;
     }
 
+    public ArrayList<Shelf> findShelfs(int sectionId) {
+        Section section = this.sectionRepository.find(sectionId);
+
+        if (section == null) {
+            return null;
+        }
+
+        ArrayList<Shelf> shelfs = this.sectionRepository.findShelfs(sectionId);
+        return shelfs;
+    }
+
+    public void removeShelf(int sectionId, int shelfId) {
+        Shelf shelf = this.sectionRepository.findShelf(sectionId, shelfId);
+
+        if (shelf == null) {
+            return;
+        }
+
+        this.sectionRepository.removeShelf(sectionId, shelfId);
+    }
 
 }
