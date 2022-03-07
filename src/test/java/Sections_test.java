@@ -57,7 +57,7 @@ public class Sections_test {
             String sql = "TRUNCATE sections CASCADE;";
 
             PreparedStatement pst = conn.prepareStatement(sql);
-            pst.executeUpdate();
+            pst.execute();
 
             String sql2 = "INSERT INTO sections (id, name, description) VALUES (1, 'Nacional', 'Seção de livros nacionais.');"
                     +
@@ -92,6 +92,17 @@ public class Sections_test {
     }
 
     @Test
+    public void find_ShouldBringANullObjectWhenIsNotFound() {
+
+        Section section = sectionRepository.find(10);
+        Section sectionS = sectionsService.find(10);
+        Section sectionC = sectionsController.find(10);
+        assertNull(section);
+        assertNull(sectionS);
+        assertNull(sectionC);
+    }
+
+    @Test
     public void findAll_ShouldBringAnArray() {
 
         ArrayList<Section> sectionsArray = sectionRepository.findAll();
@@ -102,6 +113,22 @@ public class Sections_test {
         assertEquals(sectionsArrayExpected.toString(), sectionsArrayS.toString());
         assertEquals(sectionsArrayExpected.toString(), sectionsArrayC.toString());
 
+    }
+
+    @Test
+    public void findAll_ShouldBringAnEmptyArrayWhenTableDontHaveElements() {
+        try {
+            Connection conn = Postgres.getConnection();
+            String sql = "TRUNCATE sections CASCADE;";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.execute();
+            pst.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ArrayList<Section> sections = sectionRepository.findAll();
+        assertTrue(sections.isEmpty());
     }
 
 }
