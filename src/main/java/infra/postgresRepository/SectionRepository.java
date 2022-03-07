@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import core.entities.Section;
+import core.entities.Shelf;
 import core.repository.ISectionRepository;
 import database.Postgres;
 
@@ -94,6 +95,78 @@ public class SectionRepository implements ISectionRepository {
             e.printStackTrace();
         }
         return sections;
+    }
+
+    @Override
+    public ArrayList<Shelf> findShelfs(int sectionId) {
+        ArrayList<Shelf> shelfs = new ArrayList<>();
+        try {
+            Connection conn = Postgres.getConnection();
+            String sql = "SELECT * FROM shelfs WHERE section_id = ?;";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, sectionId);
+            ResultSet rst = pst.executeQuery();
+
+            while (rst.next()) {
+                int id = rst.getInt("id");
+                int capacity = rst.getInt("capacity");
+                Shelf shelf = new Shelf(find(sectionId), capacity, id);
+                shelfs.add(shelf);
+            }
+
+            pst.close();
+            rst.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return shelfs;
+    }
+
+    @Override
+    public Shelf findShelf(int sectionId, int shelfId) {
+        Shelf shelf = null;
+        try {
+            Connection conn = Postgres.getConnection();
+            String sql = "SELECT * FROM shelfs WHERE id = ? AND section_id = ?;";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, shelfId);
+            pst.setInt(2, sectionId);
+            ResultSet rst = pst.executeQuery();
+
+            if (rst.next()) {
+                int id = rst.getInt("id");
+                int capacity = rst.getInt("capacity");
+                Section section = find(sectionId);
+                shelf = new Shelf(section, capacity, id);
+            }
+
+            pst.close();
+            rst.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return shelf;
+    }
+
+    @Override
+    public void removeShelf(int sectionId, int shelfId) {
+        try {
+            Connection conn = Postgres.getConnection();
+            String sql = "DELETE FROM shelfs WHERE section_id = ? AND id = ?;";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            pst.setInt(1, sectionId);
+            pst.setInt(2, shelfId);
+            pst.execute();
+
+            pst.close();
+            conn.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 }

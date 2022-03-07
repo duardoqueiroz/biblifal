@@ -2,7 +2,9 @@ package infra.controllers;
 
 import java.util.ArrayList;
 
+import core.entities.Book;
 import core.entities.Shelf;
+import core.entities.ShelfBooks;
 import core.services.ShelfsService;
 import infra.postgresRepository.ShelfRepository;
 
@@ -31,6 +33,25 @@ public class ShelfsController {
 
   public void remove(int shelfId) {
     this.shelfsService.remove(shelfId);
+  }
+
+  public ArrayList<ShelfBooks> findBooks(int shelfId) {
+    ArrayList<ShelfBooks> shelfBooks = this.shelfsService.findBooks(shelfId);
+    return shelfBooks;
+  }
+
+  public boolean sellBook(int bookId, int shelfId, int quantity) {
+    boolean aprovved = this.shelfsService.sellBook(bookId, shelfId, quantity);
+    return aprovved;
+  }
+
+  public void removeBook(int shelfId, int bookId) {
+    this.shelfsService.removeBook(shelfId, bookId);
+  }
+
+  public boolean insertBook(int shelfId, int bookId, int quantity) {
+    boolean approved = this.shelfsService.insertBook(shelfId, bookId, quantity);
+    return approved;
   }
 
 }
