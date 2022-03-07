@@ -56,7 +56,6 @@ public class SectionRepository implements ISectionRepository {
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setInt(1, sectionId);
             ResultSet rst = pst.executeQuery();
-
             while (rst.next()) {
                 int id = rst.getInt("id");
                 String name = rst.getString("name");
