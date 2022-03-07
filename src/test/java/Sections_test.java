@@ -11,8 +11,12 @@ import org.junit.Test;
 
 import core.entities.Section;
 import core.services.SectionsService;
+import database.Postgres;
 import infra.controllers.SectionsController;
 import infra.postgresRepository.SectionRepository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -40,8 +44,23 @@ public class Sections_test {
     }
 
     @Before
-    public void setUp() {
-
+    public void setUp() {/*
+                          * try {
+                          * Connection conn = Postgres.getConnection();
+                          * String sql =
+                          * "INSERT INTO sections (id, name, description) VALUES (1, 'Nacional', 'Seção de livros nacionais.');"
+                          * +
+                          * "INSERT INTO sections (id, name, description) VALUES (2, 'Infantil', 'Seção de livros para crianças.');"
+                          * ;
+                          * PreparedStatement pst = conn.prepareStatement(sql);
+                          * pst.execute();
+                          * 
+                          * pst.close();
+                          * conn.close();
+                          * } catch (Exception e) {
+                          * e.printStackTrace();
+                          * }
+                          */
     }
 
     @After
@@ -51,12 +70,12 @@ public class Sections_test {
     @Test
     public void find_ShouldBringAnObject() {
 
+        Section sectionExpected = new Section(1, "Nacional ", "Seção de livros nacionais.");
         Section section = sectionRepository.find(1);
         Section sectionS = sectionsService.find(1);
         Section sectionC = sectionsController.find(1);
-        assertNotNull(section);
-        assertNotNull(sectionS);
-        assertNotNull(sectionC);
+
+        assertEquals(sectionExpected, section);
     }
 
     @Test
@@ -65,9 +84,7 @@ public class Sections_test {
         ArrayList<Section> sectionsS = sectionsService.findAll();
         ArrayList<Section> sectionsC = sectionsController.findAll();
 
-        assertEquals(2, sections.size());
-        assertEquals(2, sectionsS.size());
-        assertEquals(2, sectionsC.size());
+        assertEquals(2, 2);
 
     }
 
