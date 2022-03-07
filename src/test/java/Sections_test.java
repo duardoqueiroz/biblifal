@@ -92,7 +92,7 @@ public class Sections_test {
     }
 
     @Test
-    public void find_ShouldBringAnArray() {
+    public void findAll_ShouldBringAnArray() {
 
         ArrayList<Section> sectionsArray = sectionRepository.findAll();
         ArrayList<Section> sectionsArrayS = sectionsService.findAll();
