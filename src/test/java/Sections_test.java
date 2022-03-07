@@ -11,12 +11,14 @@ import org.junit.Test;
 
 import core.entities.Section;
 import core.services.SectionsService;
+
 import database.Postgres;
 import infra.controllers.SectionsController;
 import infra.postgresRepository.SectionRepository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -34,6 +36,7 @@ public class Sections_test {
     SectionsService sectionsService = new SectionsService(sectionRepository);
     SectionsController sectionsController = new SectionsController();
 
+
     static ArrayList<Section> sectionsArrayExpected = new ArrayList<Section>();
     static Section sectionExpected;
 
@@ -44,6 +47,7 @@ public class Sections_test {
 
         sectionsArrayExpected.add(new Section(1, "Nacional", "Seção de livros nacionais."));
         sectionsArrayExpected.add(new Section(2, "Infantil", "Seção de livros para crianças."));
+
     }
 
     @AfterClass

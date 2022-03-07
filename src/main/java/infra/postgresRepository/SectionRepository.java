@@ -148,6 +148,7 @@ public class SectionRepository implements ISectionRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         return shelf;
     }
 
@@ -166,7 +167,6 @@ public class SectionRepository implements ISectionRepository {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
 }
