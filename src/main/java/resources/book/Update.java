@@ -28,6 +28,7 @@ public class Update extends javax.swing.JFrame {
                 this.user = user;
                 this.book = book;
                 initComponents();
+                setExtendedState(MAXIMIZED_BOTH);
         }
 
         /**
@@ -510,25 +511,27 @@ public class Update extends javax.swing.JFrame {
                 int[] list = this.jList1.getSelectedIndices();
                 if (list.length > 3) {
                         JOptionPane.showMessageDialog(null, "Escolha até 3 gêneros apenas!");
-                }
-                GenresController gs = new GenresController();
-                Genre[] genresList = new Genre[3];
-                for (int i : list) {
-                        System.out.println(i);
-                        genresList[i] = gs.find(i + 1);
-                }
-                if ("".equalsIgnoreCase(title.getText()) || "".equalsIgnoreCase(author.getText())
-                                || "".equalsIgnoreCase(price.getText()) || list.length == 0) {
-                        JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
                 } else {
-                        BooksController bs = new BooksController();
-                        float priceFormatted = Float.parseFloat(price.getText().replace(",", "."));
-                        bs.update(new Book(1, title.getText(), company.getText(), author.getText(), priceFormatted,
-                                        genresList), this.book.getId());
-                        JOptionPane.showMessageDialog(null, "Livro atualizado com sucesso!");
-                        Show tl = new Show(this.user);
-                        this.dispose();
-                        tl.setVisible(true);
+                        GenresController gs = new GenresController();
+                        Genre[] genresList = new Genre[3];
+                        for (int i : list) {
+                                System.out.println(i);
+                                genresList[i] = gs.find(i + 1);
+                        }
+                        if ("".equalsIgnoreCase(title.getText()) || "".equalsIgnoreCase(author.getText())
+                                        || "".equalsIgnoreCase(price.getText()) || list.length == 0) {
+                                JOptionPane.showMessageDialog(null, "Todos os campos devem ser preenchidos");
+                        } else {
+                                BooksController bs = new BooksController();
+                                float priceFormatted = Float.parseFloat(price.getText().replace(",", "."));
+                                bs.update(new Book(1, title.getText(), company.getText(), author.getText(),
+                                                priceFormatted,
+                                                genresList), this.book.getId());
+                                JOptionPane.showMessageDialog(null, "Livro atualizado com sucesso!");
+                                Show tl = new Show(this.user);
+                                this.dispose();
+                                tl.setVisible(true);
+                        }
                 }
         }// GEN-LAST:event_jButton1MouseClicked
 

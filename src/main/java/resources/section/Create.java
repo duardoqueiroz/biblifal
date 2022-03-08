@@ -18,6 +18,7 @@ public class Create extends javax.swing.JFrame {
         public Create(User user) {
                 this.user = user;
                 initComponents();
+                setExtendedState(MAXIMIZED_BOTH);
         }
 
         /**
