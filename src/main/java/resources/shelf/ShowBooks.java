@@ -12,7 +12,7 @@ import core.entities.ShelfBooks;
 import core.entities.User;
 import infra.controllers.BooksController;
 import infra.controllers.ShelfsController;
-import resources.TelaPrincipal;
+import resources.MainMenu;
 
 /**
  *
@@ -443,7 +443,7 @@ public class ShowBooks extends javax.swing.JFrame {
 
         private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel12MouseClicked
                 // TODO add your handling code here:
-                TelaPrincipal t = new TelaPrincipal(this.user);
+                MainMenu t = new MainMenu(this.user);
                 t.setVisible(true);
                 this.dispose();
         }// GEN-LAST:event_jLabel12MouseClicked

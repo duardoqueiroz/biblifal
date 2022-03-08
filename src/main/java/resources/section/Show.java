@@ -11,7 +11,7 @@ import core.entities.Section;
 import core.entities.Shelf;
 import core.entities.User;
 import infra.controllers.SectionsController;
-import resources.TelaPrincipal;
+import resources.MainMenu;
 
 /**
  *
@@ -355,7 +355,7 @@ public class Show extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel13MouseClicked
-                TelaPrincipal t = new TelaPrincipal(this.user);
+                MainMenu t = new MainMenu(this.user);
                 t.setVisible(true);
                 this.dispose();
         }// GEN-LAST:event_jLabel13MouseClicked
@@ -383,7 +383,7 @@ public class Show extends javax.swing.JFrame {
         }// GEN-LAST:event_deleteButtonActionPerformed
 
         private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel11MouseClicked
-                TelaPrincipal t = new TelaPrincipal(this.user);
+                MainMenu t = new MainMenu(this.user);
                 this.dispose();
                 t.setVisible(true);
         }// GEN-LAST:event_jLabel11MouseClicked

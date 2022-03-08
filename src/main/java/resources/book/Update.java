@@ -10,7 +10,7 @@ import core.entities.Genre;
 import core.entities.User;
 import infra.controllers.BooksController;
 import infra.controllers.GenresController;
-import resources.TelaPrincipal;
+import resources.MainMenu;
 
 import java.util.ArrayList;
 
@@ -484,7 +484,7 @@ public class Update extends javax.swing.JFrame {
         }// </editor-fold>//GEN-END:initComponents
 
         private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel13MouseClicked
-                TelaPrincipal t = new TelaPrincipal(this.user);
+                MainMenu t = new MainMenu(this.user);
                 this.dispose();
                 t.setVisible(true);
         }// GEN-LAST:event_jLabel13MouseClicked

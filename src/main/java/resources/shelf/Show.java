@@ -10,7 +10,7 @@ import core.entities.Shelf;
 import core.entities.ShelfBooks;
 import core.entities.User;
 import infra.controllers.ShelfsController;
-import resources.TelaPrincipal;
+import resources.MainMenu;
 
 /**
  *
@@ -356,7 +356,7 @@ public class Show extends javax.swing.JFrame {
 
         private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel12MouseClicked
                 // TODO add your handling code here:
-                TelaPrincipal t = new TelaPrincipal(this.user);
+                MainMenu t = new MainMenu(this.user);
                 t.setVisible(true);
                 this.dispose();
         }// GEN-LAST:event_jLabel12MouseClicked
@@ -385,7 +385,7 @@ public class Show extends javax.swing.JFrame {
         }// GEN-LAST:event_deleteButtonActionPerformed
 
         private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel11MouseClicked
-                TelaPrincipal t = new TelaPrincipal(this.user);
+                MainMenu t = new MainMenu(this.user);
                 this.dispose();
                 t.setVisible(true);
         }// GEN-LAST:event_jLabel11MouseClicked
